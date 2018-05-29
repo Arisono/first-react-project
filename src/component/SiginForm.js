@@ -8,8 +8,10 @@ class SiginForm extends  React.Component{
 
     render(){
         var styleObj = {
-            border:"2px solid #f4f4f4",
-            fontWeight:"normal"
+            marginTop:"10px",
+            border:"0px solid #f4f4f4",
+            fontWeight:"normal",
+            boxShadow:"2px 2px 5px #333333"
         }
         return <div class="container">
 
@@ -19,7 +21,7 @@ class SiginForm extends  React.Component{
                  <form class="form-horizontal" style={styleObj}>
                      <fieldset>
                          <div id="legend" class="" style={{margin:"20px 25px 25px 20px"}}>
-                             <legend class="" style={{marginBottom:"10px",color:"blue"}}>表单名</legend>
+                             <legend class="" style={{marginBottom:"10px",color:"blue"}}>登录管理系统</legend>
                          </div>
 
 
