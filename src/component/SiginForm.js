@@ -22,6 +22,7 @@ class SiginForm extends  React.Component{
             password:"",
             loaded:true,
             signSuccess:false,
+            signMessage:"",
             date:moment().format('YYYY-MM-DD HH:mm:ss')
         }
     }
@@ -54,11 +55,11 @@ class SiginForm extends  React.Component{
      handlerSave=(event)=>{
          event.preventDefault();
          if(this.state.phone==""){
-             alert("请输入手机号！");
+             alert("请输入手机号码!")
              return
          }
          if(this.state.password==""){
-             alert("请输入密码！");
+             alert("请输入密码!")
              return
          }
         let url="http://192.168.253.200:8080/sign/"+this.state.phone+"/"+this.state.password+"/"+ this.state.date;
@@ -69,9 +70,15 @@ class SiginForm extends  React.Component{
              .then(res=>{
                  console.log("success")
                   if (res.data.messge.success){
-                      alert("签到成功！")
+                      this.setState({
+                          signSuccess:true,
+                          signMessage:"签到成功!"
+                      })
                   }else{
-                      alert("签到失败！")
+                      this.setState({
+                          signSuccess:false,
+                          signMessage:"签到失败!"
+                      })
                   }
                  this.setState({
                      loaded:true,
@@ -82,13 +89,14 @@ class SiginForm extends  React.Component{
                  })
              }).catch(error=>{
              console.log("error")
-             alert("签到失败！")
              this.setState({
                  loaded:true,
                  signInfo:JSON.stringify(error),
                  status:error.status,
                  header:JSON.stringify(error.headers),
-                 content:JSON.stringify(error.data)
+                 content:JSON.stringify(error.data),
+                 signSuccess:false,
+                 signMessage:"签到失败!"
              })
          })
 
@@ -97,17 +105,39 @@ class SiginForm extends  React.Component{
 
     render(){
         console.log("render()")
+        var options = {
+            lines: 13,
+            length: 20,
+            width: 10,
+            radius: 20,
+            scale: 0.3,
+            corners: 1,
+            color: '#000',
+            opacity: 0.25,
+            rotate: 0,
+            direction: 1,
+            speed: 1,
+            trail: 60,
+            fps: 20,
+            zIndex: 2e9,
+            top: '50%',
+            left: '50%',
+            shadow: false,
+            hwaccel: false,
+            position: 'absolute'
+        };
         //具有分根线的样式
         var styleObj = {
             marginTop:"10px",
+            marginBottom:"10px",
             border:"0px solid #f4f4f4",
             fontWeight:"normal",
             boxShadow:"2px 2px 5px #333333"
         }
         return <div class="container">
          {/*这是注释*/}
-            <Loader loaded={this.state.loaded}>
-                <div class="row">
+
+                <div class="row" style={{border:"1px solid #f4f4f4"}} >
                     <div class="col-md-4">   </div>
                     <div className="col-md-4">
                         <form class="form-horizontal" style={styleObj} onChange={this.handleChange.bind(this)}
@@ -118,34 +148,42 @@ class SiginForm extends  React.Component{
                                 </div>
 
                                 <div class="control-group" >
-                                    <label class="control-label col-xs-2" for="input01" >手机</label>
-                                    <div class="controls col-xs-10">
+                                    <label class="control-label col-xs-3" for="input01" >手机</label>
+                                    <div class="controls col-xs-9">
                                         <input type="text"  ref="phone"  placeholder=""  value={this.state.phone} class="input-xlarge" />
                                         <p class="help-block"></p>
                                     </div>
                                 </div>
 
                                 <div class="control-group">
-                                    <label class="control-label col-xs-2" for="input01">密码</label>
-                                    <div class="controls col-xs-10">
+                                    <label class="control-label col-xs-3" for="input01">密码</label>
+                                    <div class="controls col-xs-9">
                                         <input type="text" ref="password" placeholder="" value={this.state.password} class="input-xlarge" />
                                         <p class="help-block"></p>
                                     </div>
                                 </div>
 
                                 <div class="control-group">
-                                    <label class="control-label col-xs-2" for="input01">时间</label>
-                                    <div class="controls col-xs-10">
+                                    <label class="control-label col-xs-3" for="input01">时间</label>
+                                    <div class="controls col-xs-9">
                                         <input type="text" ref="signDate" value={this.state.date} placeholder="" class="input-xlarge"/>
                                         <p class="help-block"></p>
                                     </div>
                                 </div>
 
                                 <div class="control-group">
-                                    <label class="control-label col-xs-2"></label>
-                                    <div class="controls col-xs-10">
-                                        <button class="btn btn-info " style={{marginBottom:"20px",marginTop:"10px"}}>提交</button>
-                                        {this.state.signSuccess}
+                                    <label class="control-label col-xs-3" style={{border:"0px solid #f4f4f4" ,height:"55px"}}>
+                                        <Loader loaded={this.state.loaded} options={options}   ></Loader>
+                                        </label>
+                                    <div class="controls col-xs-9" style={{border:"0px solid #f4f4f4"}}>
+
+                                            <button class="btn btn-info " style={{marginBottom:"10px",marginTop:"10px"}}>提交</button>
+                                            {this.state.signSuccess?
+                                                <div style={{display:"inline",marginLeft:"10px"}}><span style={{color:"green"}}>{this.state.signMessage}</span></div>
+                                                :
+                                                <div style={{display:"inline",marginLeft:"10px"}}><span style={{color:"red"}}>{this.state.signMessage}</span></div>}
+
+
                                     </div>
                                 </div>
 
@@ -164,7 +202,7 @@ class SiginForm extends  React.Component{
                         </ul>
                     </div>
                 </div>
-            </Loader>
+
 
         </div>
     }
