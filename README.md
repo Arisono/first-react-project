@@ -12,6 +12,11 @@
 
 - 掌握基本的React语法
 - 掌握基本的CSS样式
+
+```
+ [react-bootstrap](https://react-bootstrap.github.io/layout/grid/)
+```
+
 - 掌握脚手架基本打包流程
 
 #### 第二阶段：
