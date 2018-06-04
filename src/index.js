@@ -8,5 +8,5 @@ import SiginForm from './component/SiginForm'
 import  BSList from "./bootstrap/list/BSList"
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<BSList />, document.getElementById('root'));
+ReactDOM.render(<SiginForm />, document.getElementById('root'));
 registerServiceWorker();

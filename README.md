@@ -1,4 +1,4 @@
-# https://github.com/Arisono/first-react-project
+#React知识学习
 
 ### 环境搭建
 
@@ -17,7 +17,18 @@
  [react-bootstrap](https://react-bootstrap.github.io/layout/grid/)
 ```
 
-- 掌握脚手架基本打包流程
+- **掌握脚手架基本打包流程**
+
+WEBStorm Terminal视图窗口执行打包命令
+
+````
+npm run build
+````
+在根目录下的package.json文件下，配置homepage字段进行服务器自定义访问路径
+
+```
+ "homepage":"/Chapter"
+```
 
 #### 第二阶段：
 
