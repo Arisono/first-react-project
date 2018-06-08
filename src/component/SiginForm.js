@@ -43,7 +43,6 @@ class SiginForm extends  React.Component{
             console.log("error:"+JSON.stringify(error));
         })
 
-        this.getSignInfo();
     }
 
     handleChange() {
