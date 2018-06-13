@@ -4,7 +4,21 @@
 
 - 脚手架
 - 基本组件
+- 路由组件(src/router)
 
+
+> 安装路由组件：
+
+````
+npm install react-router react-router-dom --save
+
+````
+
+### 理论知识
+
+#### **路由库React-Router**
+
+ React 体系的一个重要部分：路由库React-Router。它是官方维护的，事实上也是唯一可选的路由库。它通过管理 URL，实现组件的切换和状态的变化，开发复杂的应用几乎肯定会用到。
 
 ### 功能列表
 
