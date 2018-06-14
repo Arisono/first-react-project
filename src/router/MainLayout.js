@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Home from "./basic/Home";
 import About from "./basic/About";
 import Topics from "./basic/Topics";
+import AboutMe from "./example/AboutMe";
 
 /**
  * 演示基本的路由
@@ -60,12 +61,21 @@ class BasicExample extends React.Component{
                             <Link to="/topics">网络通讯</Link></li>
                         <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
                             <Link to="/topics">布局适配</Link></li>
+
+                        <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
+                            <Link to="/topics">其它资料</Link></li>
+                        <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
+                            <Link to="/aboutMe">关于我</Link></li>
+                        <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
+                            <Link to="/topics">欢迎加群：<span style={{color:"red",fontWeight:"bold"}}>794472095</span></Link></li>
                       {/*  </ul>*/}
                     </div>
                     <div className="row">
                         <Route  path="/home" component={Home} />
                         <Route path="/about" component={About}/>
                         <Route path="/topics" component={Topics} />
+                        <Route path="/aboutMe" component={AboutMe} />
+
                     </div>
                 </div>
 
