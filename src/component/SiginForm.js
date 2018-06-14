@@ -141,7 +141,7 @@ class SiginForm extends  React.Component{
             fontWeight:"normal",
             boxShadow:"2px 2px 5px #333333"
         }
-        return <div class="container-fluid">
+        return <div >
             {/*这是注释*/}
 
             <div class="row" style={{border:"1px solid #f4f4f4"}} >

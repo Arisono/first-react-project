@@ -27,10 +27,10 @@ class BSList extends React.Component{
             lineHeight:"30px",
             display:"display",
             border:"0px solid green"};
-        return <div className="container-fluid" >
-            {/*导航栏*/}
+        return <div className="" >
+            {/*导航栏 navbar-fixed-top*/}
             <div className="row" >
-                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style={{
+                <nav class="navbar navbar-inverse " role="navigation" style={{
                         "-webkit-border-radius": "0",
                          "-moz-border-radius": "0",
                          "border-radius": "0",
@@ -65,15 +65,15 @@ class BSList extends React.Component{
                 </nav>
             </div>
 {/*列表组件*/}
-            <div className="row" style={{marginTop:"80px"}}>
+            <div className="row" >
                 <div className="row">
                     <div className="col-md-2"></div>
                     <div className="col-md-8">
-                        <div class="alert alert-warning">
-                            <a href="#" class="close" data-dismiss="alert">
-                            </a>
-                            <strong>警告！</strong>您的网络连接有问题。
-                        </div>
+                        {/*<div class="alert alert-warning">*/}
+                            {/*<a href="#" class="close" data-dismiss="alert">*/}
+                            {/*</a>*/}
+                            {/*<strong>警告！</strong>您的网络连接有问题。*/}
+                        {/*</div>*/}
                     </div>
                     <div className="col-md-2"></div>
                 </div>

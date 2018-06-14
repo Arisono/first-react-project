@@ -5,8 +5,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import ParamsExample from "../Example/ParamsExample";
-import AuthExample from "../Example/AuthExample";
+import ParamsExample from "../example/ParamsExample";
+import AuthExample from "../example/AuthExample";
 /**
  * Created by Arison on 2018/6/13.
  */
