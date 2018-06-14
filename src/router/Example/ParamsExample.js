@@ -42,10 +42,10 @@ class ParamsExample extends React.Component{
                         <Link to={`${this.props.match.url}/modus-create`}>Modus Create</Link>
                     </li>
                     <li>
-                        <Link to={`${this.props.match.url}/order/asc`}>order-asc</Link>
+                        <Link to={`${this.props.match.url}/order/asc`}>order-asc(不受限制的访问)</Link>
                     </li>
                     <li>
-                        <Link to={`${this.props.match.url}/order/errors`}>order-errors</Link>
+                        <Link to={`${this.props.match.url}/order/errors`}>order-errors(受限制的访问)</Link>
                     </li>
                 </ul>
 

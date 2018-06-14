@@ -16,20 +16,32 @@ import Topics from "./Topics";
 class BasicExample extends React.Component{
    
     render(){
-        return <div>
+        let fluid={
+            border:"1px solid #ffffff",
+        };
+        let borderLine={
+            border:"1px solid #ffffff",
+            height:"43px"
+        };
+        return <div className="container-fluid" style={fluid}>
             <Router>
                 {/*只能有一个子元素*/}
-                <div>
-                    <h2>路由</h2>
-                     {/*简单的列表*/}
-                     <ul >
-                         <li ><Link to="/" >主菜单</Link></li>
-                         <li ><Link to="/about">关于</Link></li>
-                         <li ><Link to="/topics">主题</Link></li>
-                     </ul>
+                <div className="row">
+                    <div style={borderLine} >
+
+                        {/*简单的列表*/}
+                        <ul style={{border:"1px solid #ffffff"}}>
+                            <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
+                                <Link to="/" >主菜单</Link></li>
+                            <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
+                                <Link to="/about">官方案例</Link></li>
+                            <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
+                                <Link to="/topics">主题</Link></li>
+                        </ul>
+                    </div>
 
                     <Route exact path="/" component={Home} />
-                    <Route path="/about" component={About} />
+                    <Route path="/about" component={About}/>
                     <Route path="/topics" component={Topics} />
                 </div>
             </Router>

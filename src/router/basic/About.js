@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ParamsExample from "../Example/ParamsExample";
-import Topic from "./Topic";
 import AuthExample from "../Example/AuthExample";
 /**
  * Created by Arison on 2018/6/13.
@@ -14,18 +13,34 @@ import AuthExample from "../Example/AuthExample";
 class About extends React.Component{
 
     render(){
+        let borderLine0={
+            border:"1px solid #ffffff",
+            marginTop:"0px",
+            minHeight:"600px"
+        };
         let borderLine={
-            border:"2px solid #f4f4f4",
+            border:"1.5px solid #f4f4f4",
             padding:"5px 5px 5px 5px",
             minHeight:"600px"
         };
-        return <div className="container-fluid">
-            <h2>官方案例:</h2>
-         <div className="row">
+        return <div   style={borderLine0}>
+
+         <div className="row" >
              <div className="col-md-2" style={borderLine}>
                  <ul>
+                     <li><a href="https://reacttraining.com/react-router/web/example/static-router">react-router</a></li>
                      <li><Link to={`${this.props.match.url}/parameters`}>URL Parameters</Link></li>
                      <li><Link to={`${this.props.match.url}/redirects`}>Redirects (Auth)</Link></li>
+                     <li>Custom Link</li>
+                     <li>Preventing Transitions</li>
+                     <li>No Match (404)</li>
+                     <li>Recursive Paths</li>
+                     <li>Sidebar</li>
+                     <li>Animated Transitions</li>
+                     <li>Ambiguous Matches</li>
+                     <li>Route Config</li>
+                     <li>Modal Gallery</li>
+                     <li>StaticRouter Context</li>
                  </ul>
              </div>
 
