@@ -22,5 +22,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "/Chapter"
+  "homepage": "/Chapter",
+  "devDependencies": {
+    "react-sortable-mixin": "0.0.1"
+  }
 }

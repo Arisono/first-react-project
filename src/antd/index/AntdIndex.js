@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import MenuExample from "../menu/MenuExample";
+import SortableExample from "../../component/scroll/SortableExample";
 /**
  * Created by Arison on 2018/6/14.
  */
@@ -27,6 +28,7 @@ class AntdIndex extends React.Component{
             </div>
             <div className="col-md-10">
                 <Route path={`${this.props.match.url}/home`} component={MenuExample}> </Route>
+                <Route path={`${this.props.match.url}/menu`} component={SortableExample}> </Route>
             </div>
            {/* <iframe className="col-md-12" style={{height:"590px", border:"2px solid #B0212F",display:"block",padding:"0"}}
                     src="http://localhost:8001/#/dashboard/analysis"
