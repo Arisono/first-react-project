@@ -11,7 +11,6 @@
 
 ````
 npm install react-router react-router-dom --save
-
 ````
 > 安装antd
 
@@ -19,6 +18,11 @@ npm install react-router react-router-dom --save
 npm install antd --save
 ````
 [antd 组件文档](https://ant.design/components/menu/)
+
+> 安装sortablejs
+````
+npm install sortablejs --save
+````
 
 ### 理论知识
 
