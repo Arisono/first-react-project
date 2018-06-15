@@ -8,8 +8,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Home from "./basic/Home";
 import About from "./basic/About";
 import Topics from "./basic/Topics";
+import AntdIndex from "../antd/index/AntdIndex";
 import AboutMe from "./example/AboutMe";
-
+import  reactJPG from  "../images/react.jpg";
 /**
  * 演示基本的路由
  * Created by Arison on 2018/6/13.
@@ -22,66 +23,73 @@ class BasicExample extends React.Component{
         };
         let borderLine={
             border:"1px solid #ffffff",
-            height:"43px"
+            overflow:"hidden",
+            height:"44px"
         };
-        return <div className="" style={fluid}>
-            <Router>
+        return  <div>
+            <Router >
                 {/*只能有一个子元素*/}
-                <div className="container-fluid">
+                <div className="container-fluid" style={fluid}>
                     <div className="row" style={borderLine} >
 
                         {/*简单的列表*/}
-                        <img src="http://img1.imgtn.bdimg.com/it/u=271374175,3988466214&fm=15&gp=0.jpg"
-                             style={{display:"inline-block",width:"40px",height:"38px",border:"1px solid #ffffff"}}></img>
+
                         {/*<ul style={{display:"inline-block", border:"1px solid #ffffff"}}>*/}
 
+                        <div className="col-md-12"  style={{overflowX:"scroll",overflowY:"hidden",whiteSpace:"nowrap"}}>
+                            <img src={reactJPG}
+                                 style={{display:"inline-block",width:"40px",height:"38px",border:"1px solid #ffffff"}}></img>
                             <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
                                 <Link to="/home" >主菜单</Link></li>
                             <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
-                                <Link to="/about">官方案例</Link></li>
+                                <Link to="/about">官方</Link></li>
                             <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
                                 <Link to="/topics">主题</Link></li>
-                        <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
-                            <Link to="/topics">路由机制</Link></li>
                             <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
-                                <Link to="/topics">React组件</Link></li>
+                                <Link to="/topics">路由</Link></li>
                             <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
-                                <Link to="/topics">Antd</Link></li>
+                                <Link to="/topics">组件</Link></li>
+                            <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
+                                <Link to="/antd">Antd</Link></li>
                             <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
                                 <Link to="/topics">Redux</Link></li>
                             <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
                                 <Link to="/topics">ReactNative</Link></li>
-                        <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
-                            <Link to="/topics">后台模板</Link></li>
-                        <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
-                            <Link to="/topics">开发框架</Link></li>
-                        <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
-                            <Link to="/topics">开源项目</Link></li>
-                        <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
-                            <Link to="/topics">网络通讯</Link></li>
-                        <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
-                            <Link to="/topics">布局适配</Link></li>
+                            <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
+                                <Link to="/topics">模板</Link></li>
+                            <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
+                                <Link to="/topics">框架</Link></li>
+                            <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
+                                <Link to="/topics">开源</Link></li>
+                            <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
+                                <Link to="/topics">网络</Link></li>
+                            <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
+                                <Link to="/topics">适配</Link></li>
+                            <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
+                                <Link to="/topics">其它</Link></li>
+                            <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
+                                <Link to="/aboutMe">关于我</Link></li>
+                            <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
+                                <Link to="/topics">加群：<span style={{color:"red",fontWeight:"bold"}}>794472095</span></Link></li>
+                        </div>
 
-                        <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
-                            <Link to="/topics">其它资料</Link></li>
-                        <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
-                            <Link to="/aboutMe">关于我</Link></li>
-                        <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
-                            <Link to="/topics">欢迎加群：<span style={{color:"red",fontWeight:"bold"}}>794472095</span></Link></li>
-                      {/*  </ul>*/}
+                        {/*  </ul>*/}
                     </div>
-                    <div className="row">
-                        <Route  path="/home" component={Home} />
-                        <Route path="/about" component={About}/>
-                        <Route path="/topics" component={Topics} />
-                        <Route path="/aboutMe" component={AboutMe} />
+                    {/*这里如果是row 会增加右边的边距*/}
 
-                    </div>
+
+                        <Route className="col-md-12" path="/home" component={Home} />
+                        <Route className="col-md-12" path="/about" component={About}/>
+                        <Route className="col-md-12" path="/topics" component={Topics} />
+                        {/*<Route className="col-md-12" path="/aboutMe/:webUrl" component={WebView} />*/}
+                        {/*<Route className="col-md-12" path={{pathname:"/antd",state:{webUrl:"http://localhost:8001/#/dashboard/analysis"}}}   component={WebView} />*/}
+                    <Route className="col-md-12" path="/antd" component={AntdIndex} />
+                    <Route className="col-md-12" path="/aboutMe" component={AboutMe} />
+
                 </div>
 
-
             </Router>
-        </div>
+            </div>
     }
 }
 

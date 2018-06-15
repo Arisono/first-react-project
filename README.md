@@ -13,6 +13,12 @@
 npm install react-router react-router-dom --save
 
 ````
+> 安装antd
+
+````
+npm install antd --save
+````
+[antd 组件文档](https://ant.design/components/menu/)
 
 ### 理论知识
 

@@ -17,8 +17,7 @@ class Home extends React.Component{
         super(props);
     }
     render(){
-        return <div>
-              <div className="row">
+        return <div className="row">
                   <div className="col-md-2" style={{border:"1px solid #ffffff",padding:"0px.0px.10px.10px"}}>
                       <ul style={{border:"1px solid #f4f4f4",paddingTop:"10px",minHeight:"600px"}}>
                           <li><Link to={`${this.props.match.url}/sign`}>签到组件</Link></li>
@@ -34,8 +33,6 @@ class Home extends React.Component{
                       <Route path={`${this.props.match.url}/http`} component={JHttpRequet}/>
                       <Route path={`${this.props.match.url}/bootstrap`} component={BSList}/>
                   </div>
-              </div>
-
         </div>
     }
 }
