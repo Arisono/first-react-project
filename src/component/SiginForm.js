@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import  http_axios from  'axios'
 import  moment from 'moment';
 import  Loader from 'react-loader'
+
 /**
  * created by aisonos at 2018/5/29
  */
@@ -20,7 +21,7 @@ class SiginForm extends  React.Component{
             header:"",
             content:"",
             phone:"13266699268",
-            password:"111111aa",
+            password:"111111aaa",
             loaded:true,
             signSuccess:false,
             signMessage:"",
@@ -30,21 +31,22 @@ class SiginForm extends  React.Component{
 
     componentDidMount(){
         console.log("componmentDidMount()")
-        http_axios.get("http://47.100.188.105:8080/Chapter/unionpay/appConsume").then(res=>{
-            console.log("result:"+JSON.stringify(res));
+        let url = "http://47.100.188.105:8080/Chapter/sign/" + this.state.phone + "/" + this.state.password + "/" + moment().format('YYYY-MM-DD');
+        this.setState({
+            loaded: false
+        })
+
+        http_axios.get(url).then(res=>{
+            console.log("res:"+JSON.stringify(res))
             this.setState({
-                loaded:false,
-                signInfo:JSON.stringify(res),
-                status:res.status,
-                header:JSON.stringify(res.headers),
-                content:JSON.stringify(res.data)
+                signList:res.data.listdata,
+                loaded:true
             })
-        }).catch(error=>{
-            console.log("error:"+JSON.stringify(error));
+        }).catch(errors=>{
+
         })
 
     }
-
     handleChange() {
         console.log(this.refs)
         this.setState({
@@ -53,6 +55,7 @@ class SiginForm extends  React.Component{
             date:this.refs.signDate.value
         })
     }
+
 
     handlerSave=(event)=>{
         event.preventDefault();
@@ -74,31 +77,44 @@ class SiginForm extends  React.Component{
         })
         http_axios.post(url)
             .then(res => {
-                console.log("success")
-
-                if (res.data.messge.success) {
-                    this.setState({
-                        signSuccess: true,
-                        signList: res.data.list.listdata,
-                        signMessage: "签到成功!"
-                    })
-                } else {
-                    this.setState({
-                        signSuccess: false,
-                        signList: res.data.list.listdata,
-                        signMessage: "签到失败!"
-                    })
-                }
-                this.setState({
-                    loaded: true,
-                    signInfo: JSON.stringify(res),
-                    status: res.status,
-                    header: JSON.stringify(res.headers),
-                    content: JSON.stringify(res.data)
-                })
+                console.log("请求结果....."+ JSON.stringify(res))
+              if (res.data.messge!=null){
+                  if (res.data.messge.success) {
+                      console.log("签到成功.....")
+                      this.setState({
+                          signSuccess: true,
+                          signList: res.data.list.listdata,
+                          signMessage: "签到成功!"
+                      })
+                  } else {
+                      console.log("签到失败.....")
+                      this.setState({
+                          signSuccess: false,
+                          signList: res.data.list.listdata,
+                          signMessage: "签到失败!"
+                      })
+                  }
+                  this.setState({
+                      loaded: true,
+                      signInfo: JSON.stringify(res),
+                      status: res.status,
+                      header: JSON.stringify(res.headers),
+                      content: JSON.stringify(res.data)
+                  })
+              }else{
+                  this.setState({
+                      signSuccess: false,
+                      signMessage: "登录失败!",
+                      loaded: true,
+                      signInfo: JSON.stringify(res),
+                      status: res.status,
+                      header: JSON.stringify(res.headers),
+                      content: JSON.stringify(res.data)
+                  })
+              }
             }).catch(error => {
-            console.log("error")
-            this.setState({
+                console.log("请求错误....."+JSON.stringify(error.response))
+             this.setState({
                 loaded: true,
                 signInfo: JSON.stringify(error),
                 status: error.status,
@@ -167,7 +183,7 @@ class SiginForm extends  React.Component{
                 </div>
                 </div>
                 <div className="col-md-4">
-                    <form class="form-horizontal" style={styleObj} onChange={this.handleChange.bind(this)}
+                    <form class="form-horizontal" style={styleObj}  onChange={this.handleChange.bind(this)}
                           onSubmit={this.handlerSave.bind(this)}>
                         <fieldset>
                             <div id="legend" class="" style={{margin:"20px 25px 25px 20px"}}>
