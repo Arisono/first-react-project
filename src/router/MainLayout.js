@@ -12,6 +12,7 @@ import AntdIndex from "../antd/index/AntdIndex";
 import AboutMe from "./example/AboutMe";
 import  reactJPG from  "../images/react.jpg";
 import Index from "../antd/Index";
+import CounterApp from "../redux/Counter/CounterApp";
 /**
  * 演示基本的路由
  * Created by Arison on 2018/6/13.
@@ -63,7 +64,7 @@ class BasicExample extends React.Component{
                             <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
                                 <Link to="/antd">Antd</Link></li>
                             <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
-                                <Link to="/topics">Redux</Link></li>
+                                <Link to="/redux">Redux</Link></li>
                             <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
                                 <Link to="/topics">ReactNative</Link></li>
                             <li style={{display:"inline-block",padding:"10px",border:"1px solid #f4f4f4"}}>
@@ -96,6 +97,8 @@ class BasicExample extends React.Component{
                         {/*<Route className="col-md-12" path={{pathname:"/antd",state:{webUrl:"http://localhost:8001/#/dashboard/analysis"}}}   component={WebView} />*/}
                         <Route className="col-md-12" path="/antd" component={AntdIndex} />
                         <Route className="col-md-12" path="/aboutMe" component={AboutMe} />
+
+                    <Route className="col-md-12" path="/redux" component={CounterApp} />
                         {this.renderIndex()}
                 </div>
 

@@ -4,25 +4,34 @@
 
 - 脚手架
 - 基本组件
-- 路由组件(src/router)
+- 路由组件
 
-
-> 安装路由组件：
+> 安装路由组件
 
 ````
 npm install react-router react-router-dom --save
 ````
-> 安装antd
+> 安装Antd [(Antd 组件文档)](https://ant.design/components/menu/)
 
 ````
 npm install antd --save
 ````
-[antd 组件文档](https://ant.design/components/menu/)
 
+
+> 安装Redux
+````
+npm install --save redux react-redux redux-thunk
+npm install --save-dev redux-logger
+npm install --save-dev redux-devtools
+````
+redux不用说了，我是把它当成一个本地数据库使用，react-redux帮助你完成数据订阅，redux-thunk可以放你实现异步action，redux-logger是redux的日志中间件。
+redux-devtools 是用于调式开发用。
 > 安装sortablejs
 ````
 npm install sortablejs --save
 ````
+
+---
 
 ### 理论知识
 

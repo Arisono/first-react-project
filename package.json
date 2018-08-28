@@ -7,13 +7,17 @@
     "axios": "^0.18.0",
     "bootstrap": "^3.3.7",
     "moment": "^2.22.1",
+    "prop-types": "^15.6.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-loader": "^2.4.5",
+    "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "react-scroll": "^1.7.9",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
     "sortablejs": "^1.7.0"
   },
   "scripts": {
@@ -24,6 +28,8 @@
   },
   "homepage": "/Chapter",
   "devDependencies": {
-    "react-sortable-mixin": "0.0.1"
+    "react-sortable-mixin": "0.0.1",
+    "redux-devtools": "^3.4.1",
+    "redux-logger": "^3.0.6"
   }
 }
