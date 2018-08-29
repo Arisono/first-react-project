@@ -49,7 +49,7 @@ class Counter extends React.Component {
 
                 <div className="row">
                     <div className="col-md-6" style={{border:'1px solid #f4f4f4'}}>
-                      <CounterChild onInc10Click={this.props.onInc10Click} name={'counter-child'}></CounterChild>
+                      <CounterChild {...this.props}></CounterChild>
 
                     </div>
                 </div>

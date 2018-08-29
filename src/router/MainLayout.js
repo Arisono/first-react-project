@@ -13,6 +13,7 @@ import AboutMe from "./example/AboutMe";
 import  reactJPG from  "../images/react.jpg";
 import Index from "../antd/Index";
 import CounterApp from "../redux/Counter/CounterApp";
+import ReduxIndex from "../redux/ReduxIndex";
 /**
  * 演示基本的路由
  * Created by Arison on 2018/6/13.
@@ -89,16 +90,20 @@ class BasicExample extends React.Component{
                     </div>
                     {/*这里如果是row 会增加右边的边距*/}
 
+                    {/*首页*/}
                         <Route className="col-md-12" exact path="/" component={Index} />
+                    {/*主菜单*/}
                         <Route className="col-md-12" path="/home" component={Home} />
                         <Route className="col-md-12" path="/about" component={About}/>
                         <Route className="col-md-12" path="/topics" component={Topics} />
                         {/*<Route className="col-md-12" path="/aboutMe/:webUrl" component={WebView} />*/}
                         {/*<Route className="col-md-12" path={{pathname:"/antd",state:{webUrl:"http://localhost:8001/#/dashboard/analysis"}}}   component={WebView} />*/}
+                    {/*Antd菜单*/}
                         <Route className="col-md-12" path="/antd" component={AntdIndex} />
-                        <Route className="col-md-12" path="/aboutMe" component={AboutMe} />
 
-                    <Route className="col-md-12" path="/redux" component={CounterApp} />
+                        <Route className="col-md-12" path="/aboutMe" component={AboutMe} />
+                     {/*Redux菜单*/}
+                    <Route className="col-md-12" path="/redux" component={ReduxIndex} />
                         {this.renderIndex()}
                 </div>
 
