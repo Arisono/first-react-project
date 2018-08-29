@@ -6,11 +6,12 @@ import PropTypes from 'prop-types'
 import Todo from "./Todo";
 
 const TodoList = ({todos, toggleTodo}) => (
-    <ul>{
+    <ul>
+        { console.log("todos:"+JSON.stringify(todos))}
+        {
         todos.map(todo =>
             <Todo key={todo.id}  {...todo}
-                  onClick={() => toggleTodo(todo.id)}
-            />
+                  onClick={() => toggleTodo(todo.id)}/>
         )
     }
     </ul>
