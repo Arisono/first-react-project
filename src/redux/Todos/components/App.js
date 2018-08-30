@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import AddTodo from "../containers/AddTodo";
 import VisibleTodoList from "../containers/VisibleTodoList";
+import Footer from "./Footer";
 /**
  * Created by Arison on 15:27.
  */
@@ -26,6 +27,7 @@ class App extends React.Component{
         return <div>
             <AddTodo></AddTodo>
             <VisibleTodoList></VisibleTodoList>
+
         </div>
     }
 }

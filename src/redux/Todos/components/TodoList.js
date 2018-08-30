@@ -4,13 +4,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Todo from "./Todo";
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-const TodoList = ({todos, toggleTodo}) => (
-    <ul>
-        { console.log("todos:"+JSON.stringify(todos))}
-        {
+const TodoList = ({todoNum,todos, toggleTodo}) => (
+    <ul className="list-group">
+       {
         todos.map(todo =>
-            <Todo key={todo.id}  {...todo}
+            <Todo  key={todo.id}  {...todo} name={todoNum}
                   onClick={() => toggleTodo(todo.id)}/>
         )
     }
@@ -27,6 +28,7 @@ TodoList.propTypes = {
         completed: PropTypes.bool.isRequired,
         text: PropTypes.string.isRequired
     }).isRequired).isRequired,
+    todoNum:PropTypes.string.isRequired,
     toggleTodo: PropTypes.func.isRequired
 }
 

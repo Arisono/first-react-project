@@ -4,16 +4,18 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addTodo} from '../actions'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Footer from "../components/Footer";
 
 
-//声明一个组件
+//声明一个无状态组件
 const AddTodo = ({dispatch}) => {
     let input
 
-
     return (
         <div>
-            <form onSubmit={e => {
+            <form className="form-inline" style={{padding:'10px'}} onSubmit={e => {
                 e.preventDefault()
                 if (!input.value.trim()) {
                     return
@@ -23,10 +25,11 @@ const AddTodo = ({dispatch}) => {
                 input.value = ''
             }}>
 
-                <input ref={node => input = node}></input>
-                <button type="submit">
+                <input className="form-control" style={{display:'inline',marginRight:'10px'}}  ref={node => input = node}></input>
+                <button type="submit"  style={{display:'inline',marginRight:'10px'}} className="btn btn-sm btn-info" >
                     Add Todo
                 </button>
+                <Footer />
             </form>
 
         </div>
