@@ -2,7 +2,7 @@
  * Created by Arison on 2018/8/28.
  */
 import {
-    INCREASE,DECREASE,INCREASE10
+    INCREASE,DECREASE,INCREASE10,MULTIPLICATION
 } from '../actions/Action';
 
 const changeValue=(state={value:0},action)=>{
@@ -16,6 +16,10 @@ const changeValue=(state={value:0},action)=>{
         case INCREASE10:
 
             return {value:state.value+10}
+
+        case MULTIPLICATION:
+
+            return {value:state.value*10 }
         default:
             return state;
 

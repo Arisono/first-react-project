@@ -10,6 +10,7 @@ import {createStore} from 'redux';
 
 import changeValue from './reducers/Reducer'
 import MyCounterApp from './containers/CounterContainer'
+import  MyCounterChild from './containers/CounterChildContainer'
 /**
  * Created by Arison on 17:08.
  */

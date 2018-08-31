@@ -6,7 +6,7 @@ export const INCREASE ='INCREASE';
 export const DECREASE ='DECREASE';
 
 export const INCREASE10='INCREASE10';
-
+export const  MULTIPLICATION='MULTIPLICATION';
 
 export function incActionGenerator(){
     return {
@@ -26,6 +26,14 @@ export function decActionGenerator(){
 export  function  inc10ActionGenerator() {
     return {
         type:INCREASE10,
+        preload:'increase the current value 10'
+    }
+}
+
+
+export  function  mulActionGenerator() {
+    return {
+        type:MULTIPLICATION,
         preload:'increase the current value 10'
     }
 }

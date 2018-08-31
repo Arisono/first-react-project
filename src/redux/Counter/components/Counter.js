@@ -5,7 +5,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
+/*不直接引用子组件，而是引用子组件的容器*/
 import CounterChild from "./CounterChild";
+import MyCounterChild from "../containers/CounterChildContainer";
 
 
 // const  Counter=({value,onIncClick,onDecClick})=>{
@@ -49,8 +51,8 @@ class Counter extends React.Component {
 
                 <div className="row">
                     <div className="col-md-6" style={{border:'1px solid #f4f4f4'}}>
-                      <CounterChild {...this.props}></CounterChild>
-
+                    {/*  <CounterChild {...this.props}></CounterChild>*/}
+                        <MyCounterChild/>
                     </div>
                 </div>
             </div>
