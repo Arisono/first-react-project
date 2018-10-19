@@ -26,10 +26,11 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "/Chapter",
+  "homepage": "/wxService",
   "devDependencies": {
     "react-sortable-mixin": "0.0.1",
     "redux-devtools": "^3.4.1",
     "redux-logger": "^3.0.6"
   }
 }
+

@@ -55,3 +55,5 @@ class ReduxIndex extends React.Component{
 }
 
 export  default ReduxIndex;
+
+

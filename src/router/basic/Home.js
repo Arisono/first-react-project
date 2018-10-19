@@ -20,6 +20,7 @@ class Home extends React.Component{
         super(props);
     }
     render(){
+        console.log("Home this.props.match.url:"+this.props.match.url);
         return <div className="row">
                   <div className="col-md-2" style={{border:"1px solid #ffffff",padding:"0px.0px.10px.10px"}}>
                       <ul style={{border:"1px solid #f4f4f4",paddingTop:"10px",minHeight:"600px"}}>
