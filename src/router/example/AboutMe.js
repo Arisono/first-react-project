@@ -13,7 +13,7 @@ class AboutMe extends React.Component{
     }
     render(){
         return <div className="row">
-            <iframe className="col-md-12" style={{height:"600px",padding:"0"}} src="https://www.baidu.com" name="iframe_a"
+            <iframe className="col-md-12" style={{height:"1200px",padding:"0"}} src="https://www.baidu.com" name="iframe_a"
                     frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
         </div>
     }
