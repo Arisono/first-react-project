@@ -159,7 +159,6 @@ class SiginForm extends  React.Component{
         }
         return <div >
             {/*这是注释*/}
-
             <div class="row" style={{border:"1px solid #f4f4f4"}} >
                 <div class="col-md-3">
                 <div style={styleObj}>

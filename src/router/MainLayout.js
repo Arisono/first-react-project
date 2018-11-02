@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import ReactPage from "./pages/ReactPage";
 import BindPhonePage from "./pages/BindPhonePage";
 import BSList from "../bootstrap/list/BSList";
+import AntdPage from "./pages/AntdPage";
 
 class BasicExample extends React.Component {
     constructor(props) {
@@ -20,6 +21,7 @@ class BasicExample extends React.Component {
                 {/*   <Route  exact path="/" component={BSList} />*/}
                 <Route path="/react" component={ReactPage}/>
                 <Route path="/bindPhone" component={BindPhonePage}/>
+                <Route path="/antdPage" component={AntdPage}/>
             </div>
         </Router>
     }

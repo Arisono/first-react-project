@@ -28,14 +28,14 @@ class BindPhonePage extends React.Component{
         //        console.log("error ()"+JSON.stringify(error));
         // })
 
-        // http_axios.post("https://www.akuiguoshu.com/wxService/wxBind",{
-        //     phone:'12313123',
-        //     openid:'123123'
-        // }).then(res=>{
-        //     console.log("success ()"+JSON.stringify(res));
-        // }).catch (error=>{
-        //     console.log("error ()"+JSON.stringify(error));
-        // })
+        http_axios.post("http://218.18.115.198:8888/ERP/mobile/login.action",{
+            phone:'12313123',
+            openid:'123123'
+        }).then(res=>{
+            console.log("success ()"+JSON.stringify(res));
+        }).catch (error=>{
+            console.log("error ()"+JSON.stringify(error));
+        })
 
     }
     bindPhoneEvent(e){
