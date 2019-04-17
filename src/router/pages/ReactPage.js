@@ -86,7 +86,7 @@ class ReactPage extends React.Component{
                 {/*这里如果是row 会增加右边的边距*/}
                 <div className="row">
                     <Route className="col-md-12" exact path={`${this.props.match.url}/index`} component={Index} />
-                    <Route className="col-md-12" path={`${this.props.match.url}/myHome`}  component={Home} />
+                    <Route className="col-md-12" path={`${this.props.match.url}/home`}  component={Home} />
                     <Route className="col-md-12" path={`${this.props.match.url}/about`} component={About}/>
                     <Route className="col-md-12" path={`${this.props.match.url}/topics`} component={Topics} />
                     <Route className="col-md-12" path={`${this.props.match.url}/antd`} component={AntdIndex} />

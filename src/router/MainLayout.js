@@ -19,6 +19,9 @@ class BasicExample extends React.Component {
         return <Router basename="/wxService/">
             <div>
                 {/*   <Route  exact path="/" component={BSList} />*/}
+                <Route exact path='/' render={() => (
+                    <Redirect to='/react/home'/>
+                )}/>
                 <Route path="/react" component={ReactPage}/>
                 <Route path="/bindPhone" component={BindPhonePage}/>
                 <Route path="/antdPage" component={AntdPage}/>
